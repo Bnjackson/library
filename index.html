@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="CSS/style.css" type="text/css">
 </head>
 <body>
+    
     <header>
         <div class="header-container">
             <h1>My Library</h1>
@@ -14,19 +15,56 @@
     </header>
     <main>
         <div class="new-book-container">
-            <button class="btn-newbook">New Book</button>
+            <button id="btnNewBook" class="btn-newbook">New Book</button>
         </div>
-        <div class="form-container">
-            <form action>
-                <input type="text" name="Title" id="" placeholder="Title" required>
-                <input type="text" name="Author" id="" placeholder="Author" required>
-                <input type="number" name="Pages" id="" placeholder="Number of pages" required>
-                <label for="read-checkbox">I have finished reading this book</label>
-                <input type="checkbox" id="read-checkbox" name="read-checkbox" >
-                <input class="submit-input" type="submit" value="Submit">
+        <div id="formContainer" class="form-container">
+            <form>
+                <input type="text" name="Title" id="title" placeholder="Title" required>
+                <input type="text" name="Author" id="author" placeholder="Author" required>
+                <input type="number" name="Pages" id="pages" placeholder="Number of pages" required>
+                <input id="submitBtn" class="submit-input" type="submit" value="Submit">
             </form>
         </div>
         <div class="flex-container">
+            <div class="card">
+                <h2 class="card-title"><i>Jane Eyre</i></h2>
+                <h5 class="card-author">By Charlotte Bronte</h5>
+                <span>498 pages</span>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="">I have read this book</span>
+                </div>
+                <a class="btn-delete" href="#">Delete Book</a>
+            </div>
+            <div class="card">
+                <h2 class="card-title"><i>Jane Eyre</i></h2>
+                <h5 class="card-author">By Charlotte Bronte</h5>
+                <span>498 pages</span>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="">I have read this book</span>
+                </div>
+                <a class="btn-delete" href="#">Delete Book</a>
+            </div>
+            <div class="card">
+                <h2 class="card-title"><i>Jane Eyre</i></h2>
+                <h5 class="card-author">By Charlotte Bronte</h5>
+                <span>498 pages</span>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="">I have read this book</span>
+                </div>
+                <a class="btn-delete" href="#">Delete Book</a>
+            </div>
             <div class="card">
                 <h2 class="card-title"><i>Jane Eyre</i></h2>
                 <h5 class="card-author">By Charlotte Bronte</h5>
