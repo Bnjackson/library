@@ -46,36 +46,33 @@ function addBookToLibrary() {
     console.log(currentBook.title);
     const bookCard = document.querySelector(".card");
     const newCard = bookCard.cloneNode(true);
-    console.log(newCard);
+    console.log(newCard.children);
+    console.log(newCard.children[0]);
+    newCard.children[0].textContent = currentBook.title;
+    newCard.children[1].textContent = "By " + currentBook.author;
+    newCard.children[2].textContent = currentBook.pages + " pages";
+    newCard.setAttribute("data-book-index", myLibrary.length - 1);
+    newCard.children[4].addEventListener("click", removeBook);
     flexDiv.appendChild(newCard);
-
 }
 
 //Delete
+const btnDelete = document.getElementsByClassName("btn-delete");
 
-function deleteBook() {
+for(let i = 0; i < btnDelete.length; i++) {
+    btnDelete[i].addEventListener("click", removeBook);
+};
 
+function removeBook(e) {
+    console.log(e);
+    console.log(e.currentTarget.parentNode);
+    console.log(e.currentTarget.parentNode.getAttribute("data-book-index"));
+    if(e.currentTarget.parentNode.getAttribute("data-book-index") !== "") {
+        myLibrary.splice(e.currentTarget.parentNode.getAttribute("data-book-index"), 1);
+        e.parent.remove();
+    }
+    else {
+        
+    }
 }
 
-
-// function addBookToLibrary() {
-//     console.log(myLibrary[myLibrary.length - 1]);
-//     let currentBook = myLibrary[myLibrary.length - 1];
-//     console.log(currentBook.title);
-//     let flexDiv = document.createElement("div");
-//     flexDiv.className = "flex-container";
-//     let cardDiv = document.createElement("div");
-//     cardDiv.className = "card";
-//     flexDiv.appendChild(cardDiv);
-//     let titleH2 = document.createElement("h2");
-//     titleH2.className = "card-title";
-//     titleH2.textContent = currentBook.title;
-//     cardDiv.appendChild(titleH2);
-//     let authorH5 = document.createElement("h5");
-//     authorH5.className = "card-author";
-//     authorH5.textContent = currentBook.author;
-//     cardDiv.appendChild(authorH5);
-//     let span = document.createElement("span");
-//     span.textContent = currentBook.pages;
-//     cardDiv
-// }
