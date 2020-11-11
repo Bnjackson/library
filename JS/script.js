@@ -22,13 +22,11 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let titleValue = title.value;
     let authorValue = author.value;
     let pagesValue = pages.value;
-    console.log(title.value, author.value, pages.value);
     if(title.value !== "" && author.value !== "" && pages.value !== "") {
         title.value = author.value = pages.value = "";
         form.style.display = "none";
         const newBook = new Book(titleValue, authorValue, pagesValue);
         myLibrary.push(newBook);
-        console.log(myLibrary);
         addBookToLibrary();
     };
 })
@@ -41,13 +39,9 @@ function Book(title, author, pages) {
 
 function addBookToLibrary() {
     const flexDiv = document.querySelector(".flex-container");
-    console.log(myLibrary[myLibrary.length - 1]);
     let currentBook = myLibrary[myLibrary.length - 1];
-    console.log(currentBook.title);
     const bookCard = document.querySelector(".card");
     const newCard = bookCard.cloneNode(true);
-    console.log(newCard.children);
-    console.log(newCard.children[0]);
     newCard.children[0].textContent = currentBook.title;
     newCard.children[1].textContent = "By " + currentBook.author;
     newCard.children[2].textContent = currentBook.pages + " pages";
