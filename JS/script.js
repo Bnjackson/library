@@ -53,12 +53,12 @@ function addBookToLibrary() {
     newCard.children[2].textContent = currentBook.pages + " pages";
     newCard.setAttribute("data-book-index", myLibrary.length - 1);
     newCard.children[4].addEventListener("click", removeBook);
+    newCard.style.display = "";
     flexDiv.appendChild(newCard);
 }
 
 //Delete
 const btnDelete = document.getElementsByClassName("btn-delete");
-
 for(let i = 0; i < btnDelete.length; i++) {
     btnDelete[i].addEventListener("click", removeBook);
 };
@@ -67,12 +67,14 @@ function removeBook(e) {
     console.log(e);
     console.log(e.currentTarget.parentNode);
     console.log(e.currentTarget.parentNode.getAttribute("data-book-index"));
-    if(e.currentTarget.parentNode.getAttribute("data-book-index") !== "") {
+    if(e.currentTarget.parentNode.getAttribute("data-book-index")) {
         myLibrary.splice(e.currentTarget.parentNode.getAttribute("data-book-index"), 1);
-        e.parent.remove();
+        e.currentTarget.parentNode.remove();
+        console.log(myLibrary);
     }
     else {
-        
+        e.currentTarget.parentNode.style.display = "none";
+        console.log("else statement");
     }
 }
 
