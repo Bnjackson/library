@@ -151,3 +151,10 @@ input:checked + .slider:before {
 .btn-delete:hover {
     opacity: 60%;
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        width: 90%;
+    }
+
+}
