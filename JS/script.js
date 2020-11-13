@@ -58,13 +58,9 @@ for(let i = 0; i < btnDelete.length; i++) {
 };
 
 function removeBook(e) {
-    console.log(e);
-    console.log(e.currentTarget.parentNode);
-    console.log(e.currentTarget.parentNode.getAttribute("data-book-index"));
     if(e.currentTarget.parentNode.getAttribute("data-book-index")) {
         myLibrary.splice(e.currentTarget.parentNode.getAttribute("data-book-index"), 1);
         e.currentTarget.parentNode.remove();
-        console.log(myLibrary);
     }
     else {
         e.currentTarget.parentNode.style.display = "none";
